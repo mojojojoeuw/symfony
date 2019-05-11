@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <br>
+    <h2 class="page-header"> Reglements List </h2>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Responsable_Group</th>
+            <th>Responsable</th>
+            <th>@email</th>
+            <th>Sip Number</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reglement in reglements %}
+            <tr>
+                <th scope="row">{{reglement.id}}</th>
+                <td>{{reglement.groupResponsable}}</td>
+                <td>{{reglement.responsable}}</td>
+                <td>{{reglement.emailAddress}}</td>
+                <td>{{reglement.sipNumber}}</td>
+                <td>
+                    <a href ="/reglement/details/{{reglement.id}}" class="btn btn-success">Read</a>
+                    <a href ="/reglement/edit/{{reglement.id}}" class="btn btn-info">Update</a>
+                    <a href ="/reglement/delete/{{reglement.id}}" class="btn btn-danger">Delete</a>
+
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

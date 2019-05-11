@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<br>
+<a class="btn btn-primary" href="/reglement/index">Back to reglement</a>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item">groupe Responsable: {{reglement.groupResponsable}}</li>
+    <li class="list-group-item">Responsable: {{reglement.responsable}}</li>
+    <li class="list-group-item">email: {{reglement.emailAddress}}</li>
+    <li class="list-group-item">Sip Number: {{reglement.sipNumber}}</li>
+<li class="list-group-item">Create Date: {{reglement.createDate |date('F j, Y, g:i a')}}</li>
+<li class="list-group-item">Update Date: {{reglement.lastUpdate |date('F j, Y, g:i a')}}</li>
+    <li class="list-group-item">created By : {{reglement.createdBy}}</li>
+
+
+</ul>
+
+{% endblock %}
